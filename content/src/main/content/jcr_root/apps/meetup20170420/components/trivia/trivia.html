@@ -1,4 +1,17 @@
 <h3>Random fact of the day</h3>
 <div data-sly-use.randomFact="${'trivia.js'}">
-    ${randomFact}
+    <div data-sly-test="${wcmmode.edit}">
+        <h4>Trivia Component settings</h4>
+        <ul>
+            <li># facts: ${randomFact.nrFacts}</li>
+            <li>Imageuploaded?: ${randomFact.imageUploaded}</li>
+            <li>Probability of showing image: ${properties.randomCutoffValue}%</li>
+        </ul>
+    </div>
+    <div  data-sly-test="${randomFact.fact != null}">
+        ${randomFact.fact}
+    </div>
+    <img data-sly-test="${randomFact.imageUploaded && randomFact.showImage}"
+         src="${resource.path}/file/jcr:content"/>
+
 </div>

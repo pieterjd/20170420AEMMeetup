@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    jcr:primaryType="cq:Dialog"
+   title="Trivia Setup"
+    xtype="dialog">
+    <items jcr:primaryType="cq:TabPanel">
+        <items jcr:primaryType="cq:WidgetCollection">
+            <randomFactsTab jcr:primaryType="cq:Panel" title="Facts">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <facts
+                            jcr:primaryType="cq:Widget"
+                            fieldLabel="Collection of facts"
+                            fieldDescription="One random fact will be displayed."
+                            name="./facts"
+                            xtype="multifield">
+                        <fieldConfig
+                                jcr:primaryType="nt:unstructured"
+                                xtype="textarea"/>
+                    </facts>
+
+                </items>
+            </randomFactsTab>
+            <imageTab
+                    jcr:primaryType="cq:Widget"
+                    ddGroups="[media]"
+                    fileReferenceParameter="./fileReference"
+                    name="./file"
+                    title="Random Image"
+                    allowFileReference="false"
+                    fieldDescription="This image will be shown 'on occasion'."
+                    xtype="html5smartimage"/>
+            <imageShowTab jcr:primaryType="cq:Panel" title="Random Settings">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <randomShow
+                            jcr:primaryType="cq:Widget"
+                            fieldLabel="Randomness Percentage"
+                            fieldDescription="The probability of showing an additional image. Enter a value between 0 and 100."
+                            name="./randomCutoffValue"
+                            minValue="0"
+                            maxValue="100"
+                            xtype="numberfield">
+
+                    </randomShow>
+
+                </items>
+            </imageShowTab>
+        </items>
+    </items>
+
+</jcr:root>
