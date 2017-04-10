@@ -23,8 +23,9 @@
             <imageTab
                     jcr:primaryType="cq:Widget"
                     ddGroups="[media]"
-                    fileReferenceParameter="./fileReference"
-                    name="./file"
+                    fileNameParameter="./image/fileName"
+                    fileReferenceParameter="./image/fileReference"
+                    name="./image/file"
                     title="Random Image"
                     allowFileReference="false"
                     fieldDescription="This image will be shown 'on occasion'."

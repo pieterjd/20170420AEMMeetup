@@ -6,7 +6,7 @@ use(["/libs/wcm/foundation/components/utils/ResourceUtils.js" ],function (Resour
     var randomIndex = Math.floor(Math.random() * facts.length);
     result.fact = facts[randomIndex];
     result.nrFacts=facts.length;
-    result.imageUploaded = resource.getChild('file') != null;
+    result.imageUploaded = resource.getChild('image') != null;
     result.showImage = Math.floor(Math.random() * 100) <= properties.randomCutoffValue;
     return result;
 });
