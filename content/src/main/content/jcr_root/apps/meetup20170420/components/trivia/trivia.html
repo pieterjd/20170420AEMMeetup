@@ -11,8 +11,9 @@
     <div  data-sly-test="${randomFact.fact != null}">
         ${randomFact.fact}
     </div>
-    ${resource.path}/image/file/jcr:content
-    <img
+
+    <img style="width:100%;height: auto; display: block;"
+         data-sly-test="${randomFact.imageUploaded && randomFact.showImage}"
          src="${resource.path}/image/file/jcr:content"/>
 
 </div>
