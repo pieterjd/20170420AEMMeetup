@@ -1,6 +1,6 @@
-//this function return a random fact
-use(["/libs/wcm/foundation/components/utils/ResourceUtils.js" ],function (ResourceUtils) {
-    // you can reference the parameters via the this keyword.
+//this function return a random fact and information if an image was uploaded and if so,
+// if it should be shown
+use(function () {
     var result={};
     var facts = properties.facts;
     var randomIndex = Math.floor(Math.random() * facts.length);
