@@ -1,19 +1,21 @@
 <h3>Random fact of the day</h3>
-<div data-sly-use.randomFact="${'trivia.js'}">
+<div data-sly-use.trivia="${'trivia.js'}">
     <div data-sly-test="${wcmmode.edit}">
         <h4>Trivia Component settings</h4>
         <ul>
-            <li># facts: ${randomFact.nrFacts}</li>
-            <li>Imageuploaded?: ${randomFact.imageUploaded}</li>
+            <li># facts: ${trivia.nrFacts}</li>
+            <li>Imageuploaded?: ${trivia.imageUploaded}</li>
             <li>Probability of showing image: ${properties.randomCutoffValue}%</li>
         </ul>
     </div>
-    <div  data-sly-test="${randomFact.fact != null}">
-        ${randomFact.fact}
+    <div  data-sly-test="${trivia.fact != null}">
+        <blockquote>
+            ${trivia.fact}
+        </blockquote>
     </div>
 
     <img style="width:100%;height: auto; display: block;"
-         data-sly-test="${randomFact.imageUploaded && randomFact.showImage}"
+         data-sly-test="${trivia.imageUploaded && trivia.showImage}"
          src="${resource.path}/image/file/jcr:content"/>
 
 </div>
